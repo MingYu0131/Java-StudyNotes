@@ -13,9 +13,23 @@ public class Student {
         this.name = name;
     }
 
+    private Student(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+
     public Student(){}
 
     public void hi(){
         System.out.println("hello!");
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", hobby='" + hobby + '\'' +
+                '}';
     }
 }
