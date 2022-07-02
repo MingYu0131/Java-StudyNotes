@@ -8,6 +8,7 @@ public class Student {
     private String name;
     public int age;
     public String hobby;
+    private static int level = 99;
 
     public Student(String name) {
         this.name = name;
@@ -23,6 +24,13 @@ public class Student {
     public void hi(){
         System.out.println("hello!");
     }
+
+    private static String hi(String s, int a){
+        s = s + a + " hi!";
+        System.out.println(s);
+        return s;
+    }
+
 
     @Override
     public String toString() {
