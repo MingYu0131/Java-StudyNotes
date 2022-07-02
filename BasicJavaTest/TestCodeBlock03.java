@@ -1,4 +1,4 @@
-package com.JavaStudy.HspMiddleJavaTest;
+package com.JavaStudy.HspMiddleJavaTest.BasicJavaTest;
 
 /**
  * 测试存在继承关系时类的执行顺序（静态代码块、静态属性初始化、普通代码块、普通属性初始化、构造方法）

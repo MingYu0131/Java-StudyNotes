@@ -1,4 +1,4 @@
-package com.JavaStudy.HspMiddleJavaTest;
+package com.JavaStudy.HspMiddleJavaTest.BasicJavaTest;
 
 /**
  * 测试代码块的用法，代码块分为静态代码块和非静态代码块

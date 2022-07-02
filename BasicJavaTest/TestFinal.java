@@ -1,4 +1,4 @@
-package com.JavaStudy.HspMiddleJavaTest;
+package com.JavaStudy.HspMiddleJavaTest.BasicJavaTest;
 
 /**
  * 测试final关键字，可以修饰类、属性、方法、局部变量

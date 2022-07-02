@@ -1,4 +1,4 @@
-package com.JavaStudy.HspMiddleJavaTest;
+package com.JavaStudy.HspMiddleJavaTest.BasicJavaTest;
 
 /**
  * 测试创建一个对象时，一个类中的调用顺序，顺序依次如下：

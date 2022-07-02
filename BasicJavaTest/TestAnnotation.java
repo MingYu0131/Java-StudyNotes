@@ -1,4 +1,4 @@
-package com.JavaStudy.HspMiddleJavaTest;
+package com.JavaStudy.HspMiddleJavaTest.BasicJavaTest;
 
 /**
  * @author mingyu

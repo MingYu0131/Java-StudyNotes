@@ -1,4 +1,4 @@
-package com.JavaStudy.HspMiddleJavaTest;
+package com.JavaStudy.HspMiddleJavaTest.BasicJavaTest;
 /**
  * 测试接口的多继承特性，注意Java中类只有单继承，接口可以多继承
  */
