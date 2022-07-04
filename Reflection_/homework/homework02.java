@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
  * @version 1.0
  * 内容1、利用Class类的forName得到File的Class对象
  * 2、在控制台打印File类的所有构造器
- * 3、通过newInstance创建File对象，并创建E:\mynew.txt文件
+ * 3、通过newInstance创建File对象，并创建E:\mynew.txt 文件
  */
 public class homework02 {
     public static void main(String[] args) throws Exception {
