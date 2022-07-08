@@ -16,3 +16,13 @@ DESC emp
 #3、order by子句可以叠加使用，例如下面这个需求
 #按照部门号升序而雇员工资降序排序，显示雇员的信息
 SELECT * FROM emp ORDER BY deptno ASC, sal DESC;
+
+#4、SELECT ...limit start, rows	表示分页，当数据库表太大时，只能使用分页来浏览
+#按雇员的id升序，每页显示3条记录，分别显示第1、2、3页
+SELECT * FROM emp ORDER BY empno LIMIT 0, 3;
+SELECT * FROM emp ORDER BY empno LIMIT 3, 3;
+SELECT * FROM emp ORDER BY empno LIMIT 6, 3;
+SELECT * FROM emp ORDER BY empno LIMIT 9, 3;
+SELECT * FROM emp ORDER BY empno LIMIT 12, 3;
+
+
