@@ -12,7 +12,7 @@ SAVEPOINT b;
 INSERT INTO t18 VALUES(2, 'mybb');
 SELECT * FROM t18;
 #回退至保存点b
-#注意：回退不能往后回退，即不能先回退至a，再回退至b
+#注意：回退不能往前回退，即不能先回退至a，再回退至b
 ROLLBACK TO b;
 #回退至事务开始时
 ROLLBACK;
