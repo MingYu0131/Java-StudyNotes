@@ -7,7 +7,7 @@
 
 #四种Mysql隔离级别：会发生的问题：脏读	不可重复读	幻读	加锁读
 #1、读未提交（Read uncommitted）   1	     1		  1	   0
-#2、读已提交（Read commited）      0         1            1        0
+#2、读已提交（Read committed）     0         1            1        0
 #3、可重复读( Repeatable read)     0         0            0        0	
 #4、可串行化（Serializable）       0         0            0        1
 
