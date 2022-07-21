@@ -16,3 +16,11 @@ ALTER VIEW my_view01 AS
 #5、查看视图的结构
 DESC my_view01;
 #6、修改视图（会影响基表） update
+UPDATE my_view01
+	SET sal = 9999 WHERE ename = 'SMITH';
+SELECT * FROM emp;
+#7、修改基表（会影响视图）
+UPDATE emp
+	SET sal = 99 WHERE ename = 'SMITH';
+SELECT * FROM my_view01;
+#8、视图可以在视图的基础上创建视图
