@@ -1,5 +1,7 @@
 package com.JavaStudy.HspMiddleJavaTest.BasicJavaTest;
 
+import org.junit.jupiter.api.Test;
+
 /**
  * 测试代码块的用法，代码块分为静态代码块和非静态代码块
  * 1、代码块又称为初始化块，是类的一部分，类似于方法，但是没有方法名、返回值、参数，只在加载类或创建对象时隐式调用
