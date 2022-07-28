@@ -72,8 +72,39 @@ SELECT ename, hiredate FROM emp
 	WHERE DATE_ADD(hiredate, INTERVAL 10 YEAR) <= NOW();
 SELECT * FROM emp ORDER BY ename ASC;
 SELECT ename, hiredate FROM emp ORDER BY hiredate ASC;
-
-
+#注意：排序，越前面的优先级越大
+SELECT ename, job, sal FROM emp
+	ORDER BY job, sal;
+SELECT ename, YEAR(hiredate), MONTH(hiredate) FROM emp ORDER BY MONTH(hiredate),YEAR(hiredate);
+SELECT ename, FORMAT(sal/30, 0) AS day_sal FROM emp;
+SELECT * FROM emp
+	WHERE MONTH(hiredate) = 2;
+SELECT ename, DATEDIFF(NOW(), hiredate) AS work_day, FORMAT(DATEDIFF(NOW(), hiredate)/30,0) AS work_month FROM emp;
+SELECT ename AS name_include_A FROM emp
+	WHERE LOCATE('A', ename) <> 0;
+	
+#8、多表查询
+SELECT * FROM dept;
+SELECT * FROM emp;
+SELECT deptno, COUNT(deptno) AS num FROM emp
+	GROUP BY deptno
+	HAVING num >= 0;
+SELECT * FROM emp
+	WHERE sal > (SELECT sal FROM emp WHERE ename = 'SMITH');
+#注意：时间越新越大
+SELECT * FROM emp AS emp1, emp AS emp2
+	WHERE emp1.mgr = emp2.empno AND emp1.hiredate > emp2.hiredate;
+#注意：这里应该使用外连接，因为emp表中存在dept表中存在但是emp中不存在的部门，直接连接会丢失这个部门
+SELECT dname, emp.* FROM (emp RIGHT JOIN dept ON dept.deptno = emp.deptno);
+SELECT ename, job, dept.dname FROM emp,dept
+	WHERE emp.deptno = dept.deptno AND job = 'CLERK';
+SELECT job FROM emp
+	GROUP BY job
+	HAVING MIN(sal) > 1500;
+SELECT ename, job, emp.deptno FROM emp,dept
+	WHERE emp.deptno = dept.deptno AND dname = 'SALES'; 
+SELECT ename, sal FROM emp
+	WHERE sal > (SELECT AVG(sal) FROM emp);
 
 
 
