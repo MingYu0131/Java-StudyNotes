@@ -105,6 +105,23 @@ SELECT ename, job, emp.deptno FROM emp,dept
 	WHERE emp.deptno = dept.deptno AND dname = 'SALES'; 
 SELECT ename, sal FROM emp
 	WHERE sal > (SELECT AVG(sal) FROM emp);
+	
+SELECT ename, sal FROM emp
+	WHERE sal > (SELECT MAX(sal) FROM emp WHERE deptno = 30);
+#注意：实现求时间差应该用DATEDIFF()函数而不是直接减
+SELECT deptno, COUNT(ename) people_num, FORMAT(AVG(sal), 0) avg_sal, AVG(DATEDIFF(NOW(), hiredate)) avg_work_day FROM emp
+	GROUP BY deptno;
+SELECT dname, emp.deptno, loc, IF(COUNT(*) = 1, 0, COUNT(*)) AS people_num 
+	FROM (emp RIGHT JOIN dept ON emp.deptno = dept.deptno)
+	GROUP BY dname, emp.deptno, loc;
+SELECT dept.deptno, dept.dname, loc, COUNT(*) FROM emp, dept WHERE dept.deptno = emp.deptno
+	GROUP BY dept.deptno, dept.dname, loc;
+SELECT dept.deptno, temp.c AS people_num, dept.dname, dept.loc FROM dept, (
+	SELECT COUNT(*) AS c, deptno FROM emp
+	GROUP BY deptno) temp
+	WHERE dept.deptno = temp.deptno;
+SELECT job, MIN(sal) FROM emp
+	GROUP BY job;
 
 
 
